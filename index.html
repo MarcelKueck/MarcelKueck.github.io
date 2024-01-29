@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Our World Trip Countdown</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            color: #333;
+        }
+        #countdown {
+            font-size: 2em;
+            margin-top: 20px;
+        }
+        #photo {
+            margin-top: 20px;
+        }
+        audio {
+            display: block;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Countdown to Our World Trip!</h1>
+    <div id="photo">
+        <!-- Replace 'path_to_your_photo.jpg' with the path to your photo -->
+        <img src="media/_37A0015.jpg" alt="Us" width="300" />
+    </div>
+    <div id="countdown"></div>
+    <audio id="background-music" controls loop>
+        <source src="audio/Woodkid   Run Boy Run  LYRICS  hd720.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Sep 03, 2024 22:05:00").getTime();
+
+        // Update the count down every 1 second
+        var x = setInterval(function() {
+            // Get today's date and time
+            var now = new Date().getTime();
+            
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+            
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Output the result in an element with id="countdown"
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+            
+            // If the count down is over, write some text 
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "We're on our trip!";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>

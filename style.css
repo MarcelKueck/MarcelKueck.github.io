@@ -90,3 +90,15 @@ body, html {
     display: block;
     opacity: 1;
 }
+
+#trip-date {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #4CAF50; /* This color matches the countdown and the divider for consistency */
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white to blend with the content background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    width: 80%; /* Matches the divider width */
+    margin-bottom: 20px; /* Space before the subscribe section */
+}

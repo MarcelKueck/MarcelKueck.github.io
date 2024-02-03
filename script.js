@@ -38,3 +38,14 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 var marker = L.marker(windhoekCoords).addTo(map);
 marker.bindPopup("<b>Windhoek, Namibia</b>").openPopup();
+
+// Display the countdown target date
+document.getElementById("trip-date").innerHTML = new Date(countDownDate).toLocaleDateString("en-UK", {
+    weekday: 'long', // "Monday"
+    year: 'numeric', // "2024"
+    month: 'long', // "September"
+    day: 'numeric' // "3"
+}) + " at " + new Date(countDownDate).toLocaleTimeString("en-US", {
+    hour: '2-digit',
+    minute: '2-digit'
+});
